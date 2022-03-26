@@ -35,3 +35,59 @@ var name2 = "Gene";
 var age = 37;
 var sentence = "Hello, my name is ".concat(name2, ".I'll be ").concat(age + 1, " years old next month.");
 console.log(sentence);
+/*
+* 4.联合类型   |  字面量
+*
+* */
+var unionType;
+unionType = true;
+unionType = 'hello';
+/*
+* 5.any :表示任意类型   它可以赋值给任意变量
+* */
+var anyA;
+anyA = 10;
+anyA = '111111';
+anyA = true;
+/*
+* 6.unknown:未知类型   不能直接赋值给其他变量
+* */
+var unknownA;
+unknownA = 10;
+unknownA = '111111';
+unknownA = true;
+var s;
+s = anyA;
+var stringA;
+stringA = '222222';
+if (typeof unknownA === 'string') {
+    stringA = unknownA;
+}
+/*
+*
+* 7. 类型断言  as
+*  1.变量 as 类型       2.<类型> 变量
+* */
+stringA = unknownA;
+stringA = unknownA;
+function functionA() {
+    return 12;
+}
+function functionB() {
+    return true;
+}
+/*
+* 8.void ： 表示空
+* */
+//void 函数没有返回值  表示空
+function functionC() {
+}
+function functionD() {
+    return '222';
+}
+/*
+* 10.never ： 表示没有值  不能是任何值  永远没有返回值
+* */
+function functionE() {
+    throw new Error('报错了');
+}

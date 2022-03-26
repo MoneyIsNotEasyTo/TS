@@ -42,6 +42,79 @@ let sentence: string = `Hello, my name is ${ name2 }.I'll be ${ age + 1 } years 
 console.log(sentence);
 
 
+/*
+* 4.联合类型   |  字面量
+*
+* */
+
+let unionType : boolean | string;
+unionType = true;
+unionType = 'hello'
+
+/*
+* 5.any :表示任意类型   它可以赋值给任意变量
+* */
+
+let anyA: any;
+anyA = 10;
+anyA = '111111';
+anyA = true;
+/*
+* 6.unknown:未知类型   不能直接赋值给其他变量
+* */
+let unknownA : unknown;
+unknownA = 10;
+unknownA = '111111';
+unknownA = true;
+let s : string;
+s = anyA;
+let stringA :string;
+stringA = '222222';
+if (typeof unknownA === 'string'){
+    stringA = unknownA
+}
+/*
+*
+* 7. 类型断言  as
+*  1.变量 as 类型       2.<类型> 变量
+* */
+stringA = unknownA as string;
+stringA = <string> unknownA;
+
+
+
+function functionA() :number {
+    return 12;
+}
+function functionB() :boolean {
+    return true;
+}
+
+/*
+* 8.void ： 表示空
+* */
+//void 函数没有返回值  表示空
+function functionC() :void {
+
+}
+function functionD() :string | number {
+    return  '222'
+}
+
+/*
+* 10.never ： 表示没有值  不能是任何值  永远没有返回值
+* */
+function functionE() :never {
+    throw  new  Error('报错了')
+}
+
+
+
+
+
+
+
+
 
 
 
